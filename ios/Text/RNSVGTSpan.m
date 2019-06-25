@@ -167,6 +167,9 @@ static CGFloat RNSVGTSpan_radToDeg = 180 / (CGFloat)M_PI;
     CGRect textBounds = CTLineGetBoundsWithOptions(line, 0);
     CGFloat textMeasure = CGRectGetWidth(textBounds);
     cachedAdvance = textMeasure;
+
+    CFRelease(attrString);
+    CFRelease(line);
     return textMeasure;
 }
 
